@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "scratch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "numpy",
+    "altair",
+    "vl-convert-python",
+    "marimo",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+  'build',
+  'pytest',
+  'flake8',
+]
+
+[project.urls]
+repository = "https://github.com/keller-mark/scratch"
+
+# Reference: https://stackoverflow.com/a/74421415
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Reference: https://stackoverflow.com/a/50156706
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
