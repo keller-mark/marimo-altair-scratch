@@ -23,7 +23,7 @@ def _(join):
 
 @app.cell
 def _(DATA_DIR, join, pd):
-    df = pd.read_csv(join(DATA_DIR, "scSTAR - table of interactive tools - non-systematic.csv"), index_col=0)
+    df = pd.read_csv(join(DATA_DIR, "some_table.csv"), index_col=0)
     return (df,)
 
 
@@ -46,7 +46,7 @@ def _(alt, color_scale, df):
         y=alt.Y("count():Q", axis=alt.Axis(title="Number of Tools")),
         color=alt.Y("Source:N", scale=color_scale),
         row=alt.Row("Source:N", header=alt.Header(orient="top", title=None))
-    ).properties(height=120, title="Count of Interactive Tools")
+    ).properties(height=120, title="Count of Items")
     plot
     return (plot,)
 
